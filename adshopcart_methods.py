@@ -23,15 +23,15 @@ def setUp():
     driver.get(locators.adv_shop_cart_url)
 
     # check that Moodle URL and the home page title are as expected
-    if driver.current_url == locators.adv_shop_cart_url and driver.title == locators.adv_shop_cart_home_page_title:
+    if driver.current_url == locators.adv_shop_cart_url and locators.adv_shop_cart_home_page_title in driver.title:
         print(f'We are at Advantage Shopping homepage -- {driver.current_url}')
         print(f'{locators.app} Homepage title: {driver.title}')
         sleep(0.25)
-        tearDown()
     else:
         print(f'{locators.app} did not launch. Check your code or application!')
         print(f'Current URL: {driver.current_url}, Page title: {driver.title}')
-        tearDown()
+        # driver.close()
+        # driver.quit()
 
 
 def tearDown():
@@ -42,4 +42,5 @@ def tearDown():
         driver.close()
         driver.quit()
 
-setUp()
+# setUp()
+# tearDown()
