@@ -10,7 +10,7 @@ adv_create_account_page_url = 'https://advantageonlineshopping.com/#/register'
 adv_myAccount_page_url = 'https://advantageonlineshopping.com/#/myAccount'
 adv_MyOrders_page_url = 'https://advantageonlineshopping.com/#/MyOrders'
 
-new_username = fake.user_name()
+new_username = fake.user_name()[0:14]
 new_password = fake.password()
 email = fake.email()
 
@@ -24,5 +24,7 @@ city = fake.city()
 address = fake.street_address()
 state = fake.province_abbr()
 postal_code = fake.postalcode()
+
+subject = fake.sentence(nb_words=50)
 
 
